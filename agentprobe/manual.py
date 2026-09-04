@@ -73,7 +73,7 @@ Arac cagrisi gorunmuyorsa model herhangi bir kaydi okumamis olabilir.
 
 
 def main():
-    parser = argparse.ArgumentParser(description="AgentProbe manual chat")
+    parser = argparse.ArgumentParser(description="AI Agent Güvenlik Test Aracı — manuel sohbet")
     parser.add_argument("--model", default="gemma-4-e4b-it")
     parser.add_argument("--base-url", default="http://127.0.0.1:1234/v1")
     parser.add_argument("--mode", choices=["protected", "vulnerable"], default="protected")

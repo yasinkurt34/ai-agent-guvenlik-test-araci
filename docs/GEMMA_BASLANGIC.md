@@ -1,6 +1,6 @@
 # Gemma bağlantısı
 
-Bu bilgisayarda AgentProbe, LM Studio'daki `gemma-4-e4b-it` modeliyle eşleştirildi.
+Bu bilgisayarda AI Agent Güvenlik Test Aracı, LM Studio'daki `gemma-4-e4b-it` modeliyle eşleştirildi.
 
 - Model: `gemma-4-E4B-it-Q4_K_M.gguf`, 5.335.291.936 bayt.
 - SHA-256: `0ffb122c8b6921f13cbc34186e052524d0b5803b17f4867b7197a561400b3770`
@@ -18,7 +18,7 @@ Bağlantıyı test çalıştırmadan kontrol etmek için: `./run-gemma.ps1 -List
 
 ## Nasıl çalışıyor?
 
-AgentProbe bir test sorusu gönderir → LM Studio'daki Gemma cevap/araç isteği üretir → AgentProbe'un sahte dosya ve destek kaydı araçları isteği işler → AgentProbe erişim kararını ve cevabı raporlar.
+Proje bir test sorusu gönderir → LM Studio'daki Gemma cevap/araç isteği üretir → sahte dosya ve destek kaydı araçları isteği işler → proje erişim kararını ve cevabı raporlar.
 
 Gerçek kişisel dosyalar veya müşteri kayıtları kullanılmaz. Modelin LM Studio sohbet penceresindeki konuşmaları bu testten ayrıdır. Test sürerken modeli değiştirmek/boşaltmak veya sunucuyu durdurmak deney hatalarına yol açabilir.
 

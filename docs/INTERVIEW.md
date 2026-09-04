@@ -36,7 +36,7 @@ Bu ilk sürüm AI yardımıyla oluşturuldu. İlandaki bağımsız yazılım gel
 
 ## CV için ilk sürüme uygun ifade
 
-**AgentProbe — Python / AI Security Lab**
+**AI Agent Güvenlik Test Aracı — Python / AI Security Lab**
 
 AI desteğiyle geliştirilen bir agent güvenlik laboratuvarında, 7 saldırı senaryosu ve 3 normal görevi açık/korumalı araç katmanlarında karşılaştırdım. Yol erişim sınırı ve ticket sahipliği kontrollerini, deterministik simülasyon ve izlenebilir HTML/JSON raporlarıyla doğruladım.
 

@@ -1,4 +1,4 @@
-# AgentProbe
+# AI Agent Güvenlik Test Aracı
 
 **LLM agent'ları için araç erişim kontrolü ve güvenlik regresyon laboratuvarı.**
 
@@ -97,4 +97,4 @@ reports/demo/           Gerçekten çalıştırılmış simülasyon çıktılar�
 
 - [OWASP Prompt Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html): güven sınırları ve katmanlı savunma.
 - [OWASP Excessive Agency](https://owasp.org/www-project-top-10-for-large-language-model-applications/2_0_vulns/LLM06_ExcessiveAgency.html): araç yetkilerinin sınırlandırılması.
-- [Microsoft PyRIT](https://github.com/microsoft/PyRIT): daha geniş kapsamlı otomatik AI red teaming çerçevesi. AgentProbe PyRIT kullanmaz; küçük ve incelenebilir bir öğrenme projesidir.
+- [Microsoft PyRIT](https://github.com/microsoft/PyRIT): daha geniş kapsamlı otomatik AI red teaming çerçevesi. Bu proje PyRIT kullanmaz; küçük ve incelenebilir bir öğrenme projesidir.

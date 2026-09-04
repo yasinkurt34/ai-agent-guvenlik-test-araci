@@ -1,6 +1,6 @@
 # Gerçek Gemma deneyi — 2 Eylül 2026
 
-Model LM Studio üzerinden AgentProbe'a bağlandı. Model dosyası ve bağlantı ayrıntıları GEMMA_BASLANGIC.md içindedir.
+Model LM Studio üzerinden AI Agent Güvenlik Test Aracı'na bağlandı. Model dosyası ve bağlantı ayrıntıları GEMMA_BASLANGIC.md içindedir.
 
 İlk çalıştırma: `reports/lmstudio/20260902-172237-455/`.
 

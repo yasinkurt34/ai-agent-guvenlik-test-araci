@@ -1,12 +1,12 @@
 # LM Studio ile gerçek model testi
 
-AgentProbe soruları LM Studio'daki modele gönderir. Modelin istediği dosya/kayıt işlemlerini AgentProbe'un **sahte verili araçları** yapar. LM Studio'nun kendisinde açık taraması yapılmaz; seçtiğiniz modelin bu küçük agent uygulamasındaki davranışı ölçülür. LM Studio sohbet ekranındaki mevcut konuşmanız kullanılmaz; her test yeni bir konuşmadır.
+AI Agent Güvenlik Test Aracı soruları LM Studio'daki modele gönderir. Modelin istediği dosya/kayıt işlemlerini projenin **sahte verili araçları** yapar. LM Studio'nun kendisinde açık taraması yapılmaz; seçtiğiniz modelin bu küçük agent uygulamasındaki davranışı ölçülür. LM Studio sohbet ekranındaki mevcut konuşmanız kullanılmaz; her test yeni bir konuşmadır.
 
 ## İlk kurulum
 
 1. LM Studio'yu kurun ve bir **sohbet/instruct modeli** indirin (embedding modeli değil).
 2. Modeli yükleyin. **Developer** bölümünde **Start Server** ile yerel API sunucusunu başlatın.
-3. Varsayılan adres `http://127.0.0.1:1234`; AgentProbe API yolu olarak `/v1` ekler.
+3. Varsayılan adres `http://127.0.0.1:1234`; proje API yolu olarak `/v1` ekler.
 4. Aşağıdaki komutları proje klasöründe PowerShell ile çalıştırın.
 
 ```powershell

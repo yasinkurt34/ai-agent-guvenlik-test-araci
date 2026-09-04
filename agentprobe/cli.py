@@ -22,14 +22,14 @@ def write_reports(report, directory):
         details.append(f'<details><summary><span class="{row["verdict"]}">{row["verdict"]}</span> '
                        f'{esc(row["mode"])} / {esc(row["id"])} / run {row["repetition"]}</summary><pre>{esc(evidence)}</pre></details>')
     page = '''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AgentProbe — Security Report</title><style>
+<title>AI Agent Güvenlik Test Aracı — Güvenlik Raporu</title><style>
 body{font:16px system-ui,sans-serif;background:#101722;color:#e9eef7;max-width:1000px;margin:40px auto;padding:0 24px}
 h1{font-size:40px;margin-bottom:8px}p{line-height:1.6;color:#bbc8db}.cards{display:flex;gap:20px;flex-wrap:wrap}
 section{background:#1b2739;padding:24px;border-radius:12px;flex:1;min-width:240px}strong{font-size:36px}
 details{margin:12px 0;background:#1b2739;border-radius:8px;padding:15px}summary{cursor:pointer;overflow-wrap:anywhere}
 pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px;line-height:1.6}.PASS{color:#6ce5ad}.FAIL{color:#ff9595}.ERROR{color:#ffd580}
 span{font-weight:bold;margin-right:12px}.notice{border-left:4px solid #ffd580;padding:12px 18px;background:#242737}footer{font-size:12px;overflow-wrap:anywhere;margin-top:30px}
-</style><h1>AgentProbe</h1><p>Agent security regression lab · tool-boundary evidence</p>'''
+</style><h1>AI Agent Güvenlik Test Aracı</h1><p>Agent security regression lab · tool-boundary evidence</p>'''
     page += f'<p class="notice">Evidence: <b>{esc(report["evidence_type"])}</b> · Backend: {esc(report["backend"])}<br>'
     page += 'Scripted results validate the harness and access controls, not LLM robustness. Errors are not successful defenses. '
     page += 'PASS means no defined breach was observed in this trial; it is not a general security guarantee.</p>'

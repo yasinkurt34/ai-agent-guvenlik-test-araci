@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "agentprobe-lab"
 version = "0.1.0"
-description = "An inspectable LLM agent security regression lab"
+description = "AI Agent Güvenlik Test Aracı"
 requires-python = ">=3.10"
 dependencies = []
 
