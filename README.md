@@ -1,10 +1,29 @@
 # AI Agent Güvenlik Test Aracı
 
-**LLM agent'ları için araç erişim kontrolü ve güvenlik regresyon laboratuvarı.**
+**Yerel LLM kullanan araç çağrılı asistanlarda yetkisiz veri erişimi riskini test eden Python güvenlik laboratuvarı.**
 
-Python standart kütüphanesi ile çalışan bu proje, aynı senaryoları bilerek gevşek bırakılmış ve korumalı iki araç katmanında çalıştırır. Her denemede araç çağrısını, erişim kararını, cevabı ve güvenlik sonucunu kaydeder. HTML raporu ve JSON kanıt dosyası üretir.
+## Bu projede ne yaptım?
 
-> Hazır örnek rapor **deterministik simülasyondur; gerçek LLM ölçümü değildir**. Simülasyonun amacı test mekanizmasını ve erişim kontrollerini doğrulamaktır. Ayrıca LM Studio üzerinden yerel Gemma ile sınırlı bir deney yapılmıştır; yöntem, bulgular ve sınırlılıklar için [Gemma sonuç notuna](docs/GEMMA_SONUC.md) bakın.
+Bir destek asistanının iki araca eriştiği küçük ama gerçekçi bir hedef kurdum: `read_file` belge okuyor, `lookup_ticket` destek kaydı getiriyor. Ardından bu asistana 7 saldırı senaryosu ve 3 normal kullanıcı görevi uyguladım.
+
+Saldırılar; prompt injection, belge içinden gelen dolaylı saldırı talimatı, `../` ile dizin dışına çıkma, özel dosya isteme, başka kullanıcının ticket'ını isteme ve kimlik taklidi denemelerini kapsıyor. Her denemede modelin seçtiği araç, araç parametreleri, uygulamanın erişim kararı ve sonuç ayrı ayrı kaydediliyor. Çıktılar incelemeye uygun HTML ve JSON raporlarına dönüştürülüyor.
+
+## Amaç neydi?
+
+Amaç, “model zararlı isteği reddeder” varsayımına güvenmek yerine, **araç erişimini uygulama katmanında zorunlu kurallarla sınırlandırmayı** göstermekti. Bir LLM saldırı talimatını kabul etse bile, onun seçtiği araç çağrısı başka kullanıcının verisine veya izinli klasör dışına ulaşamamalı.
+
+## Neyi gösterdik?
+
+Aynı yapay veri kümesini ve aynı saldırı senaryolarını iki modda karşılaştırdım:
+
+| Mod | Davranış |
+|---|---|
+| Açık (vulnerable) | Araç katmanı, modelin verdiği dosya yolu ve kullanıcı bilgisini yeterince doğrulamaz. Yetkisiz istek başarıya dönüşebilir. |
+| Korumalı (protected) | Dosya yolu normalize edildikten sonra izinli belge klasörü içinde kalmalı; ticket sahibi de oturumdaki sabit kullanıcı `alice` ile eşleşmelidir. Modelin gönderdiği `user` alanı kimliği değiştiremez. |
+
+Bu laboratuvarın kanıtı şudur: **Test kapsamındaki saldırılarda güvenlik politikasını yalnızca prompt'a yazmak yeterli değildir; erişim kararı araç katmanında uygulanınca aynı istekler engellenir.** Normal görevlerin de çalışmaya devam etmesi, savunmanın her şeyi körlemesine engellemediğini kontrol eder.
+
+> Bu sonuç üretimdeki her chatbotun güvenli olduğunu veya prompt injection'ın tamamen çözüldüğünü kanıtlamaz. Hedef, tamamen yapay veri kullanan iki araçlık bir laboratuvardır. Hazır örnek rapor **deterministik simülasyondur; gerçek LLM ölçümü değildir**. LM Studio üzerinden yerel Gemma ile yapılan sınırlı deneyin yöntemi, bulguları ve sınırları için [Gemma sonuç notuna](docs/GEMMA_SONUC.md) bakın.
 
 ## Hızlı başlangıç
 
@@ -98,3 +117,4 @@ reports/demo/           Gerçekten çalıştırılmış simülasyon çıktılar�
 - [OWASP Prompt Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html): güven sınırları ve katmanlı savunma.
 - [OWASP Excessive Agency](https://owasp.org/www-project-top-10-for-large-language-model-applications/2_0_vulns/LLM06_ExcessiveAgency.html): araç yetkilerinin sınırlandırılması.
 - [Microsoft PyRIT](https://github.com/microsoft/PyRIT): daha geniş kapsamlı otomatik AI red teaming çerçevesi. Bu proje PyRIT kullanmaz; küçük ve incelenebilir bir öğrenme projesidir.
+

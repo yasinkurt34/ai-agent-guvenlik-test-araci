@@ -2,6 +2,15 @@
 
 Bu ilk sürüm AI yardımıyla oluşturuldu. İlandaki bağımsız yazılım geliştirebilme beklentisini göstermek için kodu inceleyin, kendiniz değiştirin ve gerçekten yaptığınız katkıları anlatın. Tek başına bu repo, ilandaki üç uygulamalı deneyim koşulunun karşılandığını kanıtlamaz.
 
+## Bu projeyi bir cümlede anlatma
+
+“Yerel LLM kullanan bir destek asistanında, modelin araç çağrıları üzerinden başka kullanıcının kaydına veya izinli klasör dışındaki dosyalara erişip erişemediğini test ettim. Aynı saldırıları açık ve korumalı erişim katmanlarında çalıştırdım; korumalı katmanda dosya yolu ve ticket sahipliği kontrolleri yetkisiz araç erişimini engelledi.”
+
+## Ne yaptım, neyi ispatlamadım?
+
+- **Yaptığım:** Prompt injection, IDOR ve yol geçişi denemelerini açıklanabilir senaryolara çevirdim; araç isteğini, erişim kararını ve sonucu raporladım.
+- **Gösterdiğim:** Bu laboratuvardaki iki araç için, modelin sözüne güvenmeyen uygulama seviyesi kontrollerin yetkisiz erişimi durdurduğunu gösterdim.
+- **İspatlamadığım:** Her LLM'in veya her şirket chatbotunun güvenli olduğunu, prompt injection'ın tamamen çözüldüğünü ya da gerçek bir üretim sistemini test ettiğimi söylemiyorum.
 ## 90 saniyelik demo
 
 1. `python -m agentprobe --out reports/demo` çalıştırın.
@@ -41,3 +50,4 @@ Bu ilk sürüm AI yardımıyla oluşturuldu. İlandaki bağımsız yazılım gel
 AI desteğiyle geliştirilen bir agent güvenlik laboratuvarında, 7 saldırı senaryosu ve 3 normal görevi açık/korumalı araç katmanlarında karşılaştırdım. Yol erişim sınırı ve ticket sahipliği kontrollerini, deterministik simülasyon ve izlenebilir HTML/JSON raporlarıyla doğruladım.
 
 Yukarıdaki cümleyi ancak projeyi kendiniz çalıştırıp sonuçlarını anlayarak kullanın. Henüz canlı model deneyi yapılmadığı için "LLM açıkları keşfettim" veya "prompt injection'ı önledim" yazmayın. Bağımsız kod katkılarınız ve gerçek model deneyiniz tamamlandığında metni bunlara göre güçlendirin.
+
