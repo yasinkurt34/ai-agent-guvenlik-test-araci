@@ -4,7 +4,7 @@
 
 Python standart kütüphanesi ile çalışan bu proje, aynı senaryoları bilerek gevşek bırakılmış ve korumalı iki araç katmanında çalıştırır. Her denemede araç çağrısını, erişim kararını, cevabı ve güvenlik sonucunu kaydeder. HTML raporu ve JSON kanıt dosyası üretir.
 
-> Hazır örnek rapor **deterministik simülasyondur; gerçek LLM ölçümü değildir**. Simülasyonun amacı test mekanizmasını ve erişim kontrollerini doğrulamaktır. Gerçek model deneyleri için yerel Ollama adaptörü bulunmaktadır; bu teslimatta canlı modelle denenmemiştir.
+> Hazır örnek rapor **deterministik simülasyondur; gerçek LLM ölçümü değildir**. Simülasyonun amacı test mekanizmasını ve erişim kontrollerini doğrulamaktır. Ayrıca LM Studio üzerinden yerel Gemma ile sınırlı bir deney yapılmıştır; yöntem, bulgular ve sınırlılıklar için [Gemma sonuç notuna](docs/GEMMA_SONUC.md) bakın.
 
 ## Hızlı başlangıç
 
